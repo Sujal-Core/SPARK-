@@ -1,46 +1,109 @@
-Understood ✔
-You want **EVERYTHING inside ONE SINGLE CODE BLOCK**, including:
-
-✅ All headings
-✅ All descriptions
-✅ All steps
-✅ All project structure
-✅ NOTHING outside the code block
-
-Here is the **FULL & FINAL README.md** (Spark) — **completely inside one code block**:
-
----
-
 ```markdown
 # 🚀 SPARK — Career Mentor (Carrier Catalyst)
 
-SPARK is a **career guidance and mentorship web application** built using **Flask (Python)** with a clean HTML/CSS/JS frontend.  
-It helps students and professionals explore suitable career paths, receive ATS-based resume feedback, and gain actionable insights into their career growth.
+SPARK is a comprehensive **career guidance and mentorship platform** built using **Flask (Python)**.  
+It empowers users by providing **ATS-based resume analysis**, **AI-powered domain quizzes**, and **26 complete career roadmaps** with resources.  
+The platform includes **user login**, **API integrations**, and an interactive **HTML/CSS/JS frontend**.
 
 ---
 
-## Overview
+## 🔹 Overview
 
-SPARK provides:
+SPARK helps users identify their strengths, choose the right domain, and follow a structured roadmap through:
 
-- Career recommendations  
-- ATS score & resume feedback  
-- Clean and interactive user interface  
-- Modular backend structure  
-- Deployment-ready architecture (Render, Railway, PythonAnywhere)
+- **Resume Analysis (ATS score + AI insights + courses + projects + jobs)**  
+- **AI-Based Domain Quiz (24 domains, 3 difficulty levels)**  
+- **26 Domain Roadmaps (skills → tools → projects → certifications)**  
+- **User Login System**  
+- **API-Powered Resume Processing and Insights**
 
 ---
 
 ## ✨ Features
 
-- Career Recommendation Engine (Rule-Based / Extendable to ML)
-- ATS Score Calculation (`ats.py`)
-- Resume Feedback System (`feedback.py`)
-- Flask-based Web Application (`webpage.py`)
-- Organized Python code in `Python_FIles/`
-- Template Rendering with Jinja2
-- Environment Variable Support (`SECRET_KEY`)
-- Static asset handling (CSS, JS, Images)
+### 🧾 **1. Resume Analysis (ATS + AI Advice)**  
+Users upload a resume and receive:
+- ATS Score  
+- Strengths & weaknesses  
+- Missing keywords  
+- Formatting suggestions  
+- Job alignment score  
+- AI-generated advice  
+- Recommended courses  
+- Beginner → advanced project ideas  
+- Job openings based on skills & desired role  
+
+---
+
+### 🧠 **2. AI-Powered Domain Quiz (24 Domains)**
+
+SPARK includes an advanced quiz system powered by AI logic.
+
+#### ✔ 3 Difficulty Levels  
+1. **Easy** – Basic MCQs  
+2. **Medium** – Scenario MCQ + MSQ  
+3. **Hard** – **Coding Questions**, logic-based problems, MSQ  
+
+#### ✔ Supports 3 Question Types  
+- MCQ (Single correct answer)  
+- MSQ (Multiple correct answers)  
+- Coding Questions (Hard level)  
+
+#### ✔ Quiz Output  
+- Best-fit domain  
+- Secondary-fit domain  
+- Strength score  
+- Weak areas  
+- Domain confidence level  
+
+#### ✔ 24 Available Domains (Examples)  
+- Data Science  
+- AI/ML  
+- Cybersecurity  
+- Web Development  
+- Cloud Computing  
+- Software Engineering  
+- Blockchain  
+- IoT  
+- DevOps  
+- Digital Marketing  
+- Finance Tech  
+- Business Analytics  
+… and many more.
+
+---
+
+### 🛣️ **3. Domain Roadmaps (26 Domains)**
+
+Each roadmap includes:
+
+#### ✔ Level-Wise Learning Path  
+Beginner → Intermediate → Advanced
+
+#### ✔ Tools & Technologies  
+Languages, frameworks, cloud tools, libraries
+
+#### ✔ Recommended Resources  
+- Free & paid courses  
+- Books, articles  
+- YouTube playlists  
+- Official documentation  
+
+#### ✔ Projects (Portfolio Quality)  
+- Beginner projects  
+- Intermediate projects  
+- Advanced capstone projects  
+
+#### ✔ Certifications  
+Domain-specific certifications such as:  
+AWS, Azure, Google IT, CEH, Meta Frontend, IBM Data Science, etc.
+
+#### ✔ Jobs & Salaries  
+- Entry, mid, senior roles  
+- Skill requirements  
+- Salary expectations  
+
+SPARK includes **26 complete roadmaps**, each with fully structured resources.
 
 ---
 
@@ -52,25 +115,32 @@ Carrier_Catalyst/
 │
 ├── Python_FIles/
 │   ├── webpage.py               # Main Flask app
-│   ├── ats.py                   # ATS scoring logic
-│   ├── feedback.py              # Resume feedback logic
-│   ├── **init**.py              # Makes folder importable
-│   └── other python scripts...
+│   ├── ats.py                   # Resume & ATS logic
+│   ├── quiz.py                  # AI-powered domain quiz logic
+│   ├── roadmap.py               # 26-domain roadmap generator
+│   ├── auth.py                  # User login/authentication system
+│   ├── api_handler.py           # Resume analysis + job/course APIs
+│   ├── feedback.py              # Resume improvement advice
+│   ├── **init**.py
+│   └── other Python scripts…
 │
-├── templates/                   # Frontend HTML templates
+├── templates/
 │   ├── index.html
-│   ├── dashboard.html
-│   └── more pages…
+│   ├── resume_result.html
+│   ├── quiz.html
+│   ├── roadmap.html
+│   ├── login.html
+│   └── more UI pages…
 │
-├── static/                      # CSS / JS / images
+├── static/
 │   ├── css/
 │   ├── js/
 │   └── images/
 │
-├── run.py                       # Optional: direct runner entry point
-├── requirements.txt             # Python dependencies
-├── .gitignore
-└── README.md
+├── run.py
+├── requirements.txt
+├── README.md
+└── .gitignore
 
 ````
 
@@ -78,32 +148,24 @@ Carrier_Catalyst/
 
 ## ⚡ Quick Start
 
-### 1. Clone the Repository
-
+### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/your-username/Carrier_Catalyst.git
 cd Carrier_Catalyst
 ````
 
-### 2. Create and Activate Virtual Environment
+### 2️⃣ Create a virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-Windows:
+Activate:
 
-```bash
-venv\Scripts\activate
-```
+* Windows → `venv\Scripts\activate`
+* macOS/Linux → `source venv/bin/activate`
 
-macOS / Linux:
-
-```bash
-source venv/bin/activate
-```
-
-### 3. Install Dependencies
+### 3️⃣ Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -113,7 +175,7 @@ pip install -r requirements.txt
 
 ## ▶️ Run the Application
 
-### Method 1 — Using Flask CLI
+### Method 1 — Flask CLI
 
 Windows:
 
@@ -122,14 +184,14 @@ set FLASK_APP=Python_FIles.webpage
 flask run
 ```
 
-macOS / Linux:
+macOS/Linux:
 
 ```bash
 export FLASK_APP=Python_FIles.webpage
 flask run
 ```
 
-### Method 2 — Run Directly
+### Method 2 — Python Direct Run
 
 ```bash
 python Python_FIles/webpage.py
@@ -143,93 +205,79 @@ python run.py
 
 ---
 
-## 🛠 Template & Static Folder Fix (Important)
+## 🖥 Usage
 
-If you moved your Python files into `Python_FIles/` and templates stop loading, add this to `webpage.py`:
+### ✔ Resume Analysis Flow
 
-```python
-import os
-from flask import Flask
+1. Upload resume (PDF/DOCX/TXT)
+2. Enter target job role
+3. Receive:
 
-BASE = os.path.dirname(os.path.dirname(__file__))
-TEMPLATES = os.path.join(BASE, "templates")
-STATIC = os.path.join(BASE, "static")
-
-app = Flask(__name__, template_folder=TEMPLATES, static_folder=STATIC)
-```
-
-Also ensure:
-
-```
-Python_FIles/__init__.py
-```
-
-exists.
-
-Fix imports:
-
-```python
-from Python_FIles.ats import function_name
-# or
-from .ats import function_name
-```
+   * ATS Score
+   * AI advice
+   * Recommended courses
+   * Project ideas
+   * Job openings
 
 ---
 
-## 🔐 Environment Variables Setup
+### ✔ Domain Quiz Flow
 
-Create `.env`:
+1. Choose difficulty (Easy/Medium/Hard)
+2. Answer MCQ, MSQ, and coding questions
+3. Receive:
 
-```
-SECRET_KEY=your_secure_generated_key
-```
+   * Best-fit domain
+   * Domain confidence score
+   * Strengths & weaknesses
+   * Recommended roadmap
 
-Make sure `.env` is in `.gitignore`.
+---
 
-Load it:
+### ✔ Domain Roadmap Flow
 
-```python
-from dotenv import load_dotenv
-import os
-load_dotenv()
-app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
-```
+1. Select recommended domain
+2. View learning path
+3. Explore tools, courses, projects
+4. Download or follow step-by-step roadmap
 
 ---
 
 ## 🌐 Deployment (Render)
 
-### 1. Push project to GitHub
-
-### 2. Open Render → New Web Service
-
-### 3. Connect your repository
-
-### 4. Set the following:
-
-**Build Command**
+### Build Command
 
 ```
 pip install -r requirements.txt
 ```
 
-**Start Command**
+### Start Command
 
 ```
 gunicorn Python_FIles.webpage:app --bind 0.0.0.0:$PORT
 ```
 
-### 5. Add environment variables:
+### Required Environment Variables
 
 ```
-SECRET_KEY=your_secure_key
+SECRET_KEY=your_secret_key
+API_KEY=your_api_key_if_used
 ```
-
-### 6. Deploy 🎉
 
 ---
 
-## 🧹 .gitignore (Recommended)
+## 🔧 Dependencies
+
+* Flask
+* python-dotenv
+* Gunicorn
+* requests
+* pdf/text extraction libraries
+* Any APIs integrated
+
+---
+
+## 🧹 Recommended .gitignore
 
 ```
 __pycache__/
@@ -248,35 +296,14 @@ cache.json
 secret.key
 ```
 
-If sensitive files were committed:
-
-```bash
-git rm --cached filename
-git commit -m "Removed sensitive file"
-git push
-```
-
----
-
-## 🧠 Tech Stack
-
-* Python
-* Flask
-* HTML
-* CSS
-* JavaScript
-* Gunicorn
-* python-dotenv
-
 ---
 
 ## 📄 License
 
-Licensed under **GNU AGPLv3**, ensuring:
-
-* Attribution required
-* No closed-source redistribution
-* Modified versions must remain open-source
+Licensed under **GNU AGPLv3**
+✔ Requires attribution
+✔ Derivatives must remain open-source
+✔ Prevents closed-source commercialization
 
 ---
 
@@ -289,15 +316,21 @@ Developer | AI & ML Enthusiast
 
 ## 📌 Future Enhancements
 
-* ML-powered recommendation engine
-* Resume parser improvements
-* User authentication
-* Dashboard analytics
-* API integrations
+* AI-powered resume rewriting
+* Personalized learning dashboard
+* Custom job alert system
+* Interview preparation module
 
 ```
 
 ---
 
-If you need **badges**, **screenshots**, **a short README**, or **a modern table-style layout**, just tell me!
+If you want:
+
+🔥 README with **badges**  
+🔥 README with **screenshots**  
+🔥 README with **GIF demo**  
+🔥 README in **short version**
+
+Just tell me!
 ```
