@@ -224,6 +224,7 @@ Licensed under **GNU AGPLv3**, requiring:
 ## 👤 Author
 
 **Sujal**
+
 Developer | AI & ML Enthusiast
 
 
