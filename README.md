@@ -1,171 +1,166 @@
-```markdown
-# 🚀 SPARK — Career Mentor (Carrier Catalyst)
 
-SPARK is a comprehensive **career guidance and mentorship platform** built using **Flask (Python)**.  
-It empowers users by providing **ATS-based resume analysis**, **AI-powered domain quizzes**, and **26 complete career roadmaps** with resources.  
-The platform includes **user login**, **API integrations**, and an interactive **HTML/CSS/JS frontend**.
+# SPARK — Career Mentor Platform
+
+SPARK is a comprehensive career mentorship platform built using **Flask (Python)**.
+It provides resume analysis, AI-powered quizzes, domain roadmaps, and personalized career insights.
+The platform also includes **Sparky**, an AI chatbot powered by **Groq API** for real-time guidance.
 
 ---
 
-## 🔹 Overview
+## Overview
 
-SPARK helps users identify their strengths, choose the right domain, and follow a structured roadmap through:
+SPARK includes the following major modules:
 
-- **Resume Analysis (ATS score + AI insights + courses + projects + jobs)**  
-- **AI-Based Domain Quiz (24 domains, 3 difficulty levels)**  
-- **26 Domain Roadmaps (skills → tools → projects → certifications)**  
-- **User Login System**  
-- **API-Powered Resume Processing and Insights**
+* **Resume Analysis** using Groq LLaMA 3.1B-Instant + Gemini API
+* **AI-Based Domain Quiz** (24 domains, 3 difficulty levels)
+* **26 Complete Career Roadmaps**
+* **Sparky Chatbot (Groq API)**
+* **User Login System**
+* **Modern HTML/CSS/JS Frontend**
 
 ---
 
 ## ✨ Features
 
-### 🧾 **1. Resume Analysis (ATS + AI Advice)**  
-Users upload a resume and receive:
-- ATS Score  
-- Strengths & weaknesses  
-- Missing keywords  
-- Formatting suggestions  
-- Job alignment score  
-- AI-generated advice  
-- Recommended courses  
-- Beginner → advanced project ideas  
-- Job openings based on skills & desired role  
+### 🧾 Resume Analysis
+
+**ATS Score (Groq API)**
+
+* Model: **LLaMA 3.1B-Instant**
+* Evaluates keyword match, resume structure, job-role alignment, and skills
+
+**AI-Powered Suggestions (Gemini API)**
+
+* Advice is provided to user for itsbetterment
+
+**Course Suggestions (Gemini API)**
+
+* Based on analysing the resume 
+
+**Project Recommendations**
+
+* Recommeneded on the basis of user job description and resume analysis
+
+**Job Openings**
+
+* Currently active job openings on various platforms
 
 ---
 
-### 🧠 **2. AI-Powered Domain Quiz (24 Domains)**
+## 🧠 AI Domain Quiz (24 Domains)
 
-SPARK includes an advanced quiz system powered by AI logic.
+### Powered by Gemini API
 
-#### ✔ 3 Difficulty Levels  
-1. **Easy** – Basic MCQs  
-2. **Medium** – Scenario MCQ + MSQ  
-3. **Hard** – **Coding Questions**, logic-based problems, MSQ  
+Automatically generates domain-specific quizzes.
 
-#### ✔ Supports 3 Question Types  
-- MCQ (Single correct answer)  
-- MSQ (Multiple correct answers)  
-- Coding Questions (Hard level)  
+### Difficulty Levels
 
-#### ✔ Quiz Output  
-- Best-fit domain  
-- Secondary-fit domain  
-- Strength score  
-- Weak areas  
-- Domain confidence level  
+* **Easy** → MCQ + MSQ
+* **Medium** → MCQ + MSQ + Numeric
+* **Hard** → MSQ + Coding Questions
 
-#### ✔ 24 Available Domains (Examples)  
-- Data Science  
-- AI/ML  
-- Cybersecurity  
-- Web Development  
-- Cloud Computing  
-- Software Engineering  
-- Blockchain  
-- IoT  
-- DevOps  
-- Digital Marketing  
-- Finance Tech  
-- Business Analytics  
-… and many more.
+### Question Types
+
+* MCQ
+* MSQ
+* Numerics
+* Coding Problems (Hard level)
+
+### Domain Output
+
+* Quiz Result
+* Every Question description is provided
 
 ---
 
-### 🛣️ **3. Domain Roadmaps (26 Domains)**
+## 🛣️ 26 Career Roadmaps
 
 Each roadmap includes:
 
-#### ✔ Level-Wise Learning Path  
-Beginner → Intermediate → Advanced
+* Step-by-step learning path
+* Tools & technologies to master
+* Recommended courses & resources
+* Portfolio project ideas
+* Certifications
 
-#### ✔ Tools & Technologies  
-Languages, frameworks, cloud tools, libraries
+---
 
-#### ✔ Recommended Resources  
-- Free & paid courses  
-- Books, articles  
-- YouTube playlists  
-- Official documentation  
+## 🤖 Sparky — AI Chatbot (Groq API)
 
-#### ✔ Projects (Portfolio Quality)  
-- Beginner projects  
-- Intermediate projects  
-- Advanced capstone projects  
+Sparky helps users with:
 
-#### ✔ Certifications  
-Domain-specific certifications such as:  
-AWS, Azure, Google IT, CEH, Meta Frontend, IBM Data Science, etc.
+* Career questions
+* Roadmap guidance
+* Technology updates
 
-#### ✔ Jobs & Salaries  
-- Entry, mid, senior roles  
-- Skill requirements  
-- Salary expectations  
-
-SPARK includes **26 complete roadmaps**, each with fully structured resources.
+Powered by **Groq API** for fast and accurate responses.
 
 ---
 
 ## 📦 Project Structure
 
-```
-
+```plaintext
 Carrier_Catalyst/
 │
-├── Python_FIles/
-│   ├── webpage.py               # Main Flask app
-│   ├── ats.py                   # Resume & ATS logic
-│   ├── quiz.py                  # AI-powered domain quiz logic
-│   ├── roadmap.py               # 26-domain roadmap generator
-│   ├── auth.py                  # User login/authentication system
-│   ├── api_handler.py           # Resume analysis + job/course APIs
-│   ├── feedback.py              # Resume improvement advice
-│   ├── **init**.py
-│   └── other Python scripts…
+├── backend/
+│   ├── webpage.py            # Main Flask application
+│   ├── ats.py                # Groq ATS using LLaMA 3.1B-Instant
+│   ├── quiz.py               # Gemini-powered domain quiz
+│   ├── roadmap.py            # 26-domain roadmap generator
+│   ├── auth.py               # Login/auth system
+│   ├── feedback.py           # Gemini-powered resume advice
 │
 ├── templates/
-│   ├── index.html
-│   ├── resume_result.html
-│   ├── quiz.html
-│   ├── roadmap.html
+│   ├── webpage.html
 │   ├── login.html
-│   └── more UI pages…
-│
-├── static/
-│   ├── css/
-│   ├── js/
-│   └── images/
-│
-├── run.py
-├── requirements.txt
-├── README.md
-└── .gitignore
+│   ├── quiz.html
+│   ├── jobs.html
+│   ├── feedback.html
+│   ├── roadmaps/
+       ├──Data_scientist.html
+       ├── many more ....
 
-````
+├── static/
+│   └── images/
+|
+├──Roadmps/
+   ├── Data_scientist.py
+   ├── many more...
+
+```
 
 ---
 
 ## ⚡ Quick Start
 
-### 1️⃣ Clone the repository
-```bash
-git clone https://github.com/your-username/Carrier_Catalyst.git
-cd Carrier_Catalyst
-````
+### 1. Clone the repository
 
-### 2️⃣ Create a virtual environment
+```bash
+git clone https://github.com/Sujal-Core/Carrier_Catalyst.git
+cd Carrier_Catalyst
+```
+
+### 2. Create a virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate:
+### Activate Environment
 
-* Windows → `venv\Scripts\activate`
-* macOS/Linux → `source venv/bin/activate`
+Windows:
 
-### 3️⃣ Install dependencies
+```bash
+venv\Scripts\activate
+```
+
+macOS/Linux:
+
+```bash
+source venv/bin/activate
+```
+
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -173,95 +168,34 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Run the Application
+## ▶️ Running the Application
 
-### Method 1 — Flask CLI
+### Option A — Flask CLI
 
 Windows:
 
 ```bash
-set FLASK_APP=Python_FIles.webpage
+set FLASK_APP=backend.webpage
 flask run
 ```
 
 macOS/Linux:
 
 ```bash
-export FLASK_APP=Python_FIles.webpage
+export FLASK_APP=backend.webpage
 flask run
 ```
 
-### Method 2 — Python Direct Run
+### Option B — Direct run
 
 ```bash
-python Python_FIles/webpage.py
+python backend/webpage.py
 ```
 
-### Method 3 — Using run.py
+### Option C — Using run.py
 
 ```bash
 python run.py
-```
-
----
-
-## 🖥 Usage
-
-### ✔ Resume Analysis Flow
-
-1. Upload resume (PDF/DOCX/TXT)
-2. Enter target job role
-3. Receive:
-
-   * ATS Score
-   * AI advice
-   * Recommended courses
-   * Project ideas
-   * Job openings
-
----
-
-### ✔ Domain Quiz Flow
-
-1. Choose difficulty (Easy/Medium/Hard)
-2. Answer MCQ, MSQ, and coding questions
-3. Receive:
-
-   * Best-fit domain
-   * Domain confidence score
-   * Strengths & weaknesses
-   * Recommended roadmap
-
----
-
-### ✔ Domain Roadmap Flow
-
-1. Select recommended domain
-2. View learning path
-3. Explore tools, courses, projects
-4. Download or follow step-by-step roadmap
-
----
-
-## 🌐 Deployment (Render)
-
-### Build Command
-
-```
-pip install -r requirements.txt
-```
-
-### Start Command
-
-```
-gunicorn Python_FIles.webpage:app --bind 0.0.0.0:$PORT
-```
-
-### Required Environment Variables
-
-```
-SECRET_KEY=your_secret_key
-API_KEY=your_api_key_if_used
 ```
 
 ---
@@ -270,67 +204,26 @@ API_KEY=your_api_key_if_used
 
 * Flask
 * python-dotenv
-* Gunicorn
 * requests
-* pdf/text extraction libraries
-* Any APIs integrated
-
----
-
-## 🧹 Recommended .gitignore
-
-```
-__pycache__/
-*.pyc
-venv/
-env/
-.env
-instance/
-*.log
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-*.cache
-cache.json
-secret.key
-```
+* Groq API (LLaMA 3.1B-Instant)
+* Gemini API
+* pdfminer / python-docx
 
 ---
 
 ## 📄 License
 
-Licensed under **GNU AGPLv3**
-✔ Requires attribution
-✔ Derivatives must remain open-source
-✔ Prevents closed-source commercialization
+Licensed under **GNU AGPLv3**, requiring:
+
+* Attribution
+* Open-source continuation
+* No closed-source redistribution
 
 ---
 
 ## 👤 Author
 
-**Sujal Mehra**
+**Sujal**
 Developer | AI & ML Enthusiast
 
----
 
-## 📌 Future Enhancements
-
-* AI-powered resume rewriting
-* Personalized learning dashboard
-* Custom job alert system
-* Interview preparation module
-
-```
-
----
-
-If you want:
-
-🔥 README with **badges**  
-🔥 README with **screenshots**  
-🔥 README with **GIF demo**  
-🔥 README in **short version**
-
-Just tell me!
-```
