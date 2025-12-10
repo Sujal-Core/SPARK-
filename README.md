@@ -117,15 +117,15 @@ Carrier_Catalyst/
 │   ├── jobs.html
 │   ├── feedback.html
 │   ├── roadmaps/
-       ├──Data_scientist.html
-       ├── many more ....
-
+│       ├──Data_scientist.html
+│       ├── many more ....
+│
 ├── static/
 │   └── images/
 |
 ├──Roadmps/
-   ├── Data_scientist.py
-   ├── many more...
+│   ├── Data_scientist.py
+│   ├── many more...
 
 ```
 
